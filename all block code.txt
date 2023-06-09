@@ -1,0 +1,101 @@
+
+<div>
+  <p>  {{ section.settings.image-title }} </p>
+ <p>  {{ section.settings.Description }} </p>
+  
+  <img src="{{ section.settings.image_with_text_image  | img_url: '200x200' }}" />  
+
+  <p>  {{ section.settings.blog }} </p>
+</div>
+
+
+{% schema %}
+  {
+    "name": "image-carrousel-slider",
+   
+     "class": "section",
+    "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+    "settings": [
+      {
+      "type":"text",
+       "label":"Image",
+        "id":"image-title"
+      },
+       {
+      "type":"checkbox",
+       "label":"yes/No",
+        "id":"Attache-file"
+      },
+      {
+         "type":"textarea",
+       "label":"description",
+        "id":"Description"
+      },
+     {
+  "type": "select",
+  "id": "vertical_alignment",
+  "label": "Vertical alignment",
+  "options": [
+    {
+      "value": "top",
+      "label": "Top"
+    },
+    {
+      "value": "middle",
+      "label": "Middle"
+    },
+    {
+      "value": "bottom",
+      "label": "Bottom"
+    }
+  ],
+  "default": "middle"
+},
+      {
+  "type": "number",
+  "id": "products_per_page",
+  "label": "Products per page",
+  "default": 20
+},
+      {
+  "type": "article",
+  "id": "article",
+  "label": "Article"
+},
+      {
+  "type": "blog",
+  "id": "blog",
+  "label": "Blog"
+},
+      {
+  "type": "collection",
+  "id": "collection",
+  "label": "Collection"
+},{
+  "type": "color",
+  "id": "body_text",
+  "label": "Body text",
+  "default": "#000000"
+},
+   {
+  "type": "image_picker",
+  "id": "image_with_text_image",
+  "label": "Image"
+}
+    ],
+   "presets": [
+    {
+    "name": "image carrousel"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
